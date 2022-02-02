@@ -1,0 +1,43 @@
+gitコマンドチートシート
+
+$ git checkout <branchname>
+HEADのコミットポイントをchange
+$ git checkout -b <branchname>
+-b : ブランチ新規作成(今いるブランチを起点として)
+
+$ git branch -a
+リモートリポを含むローカルリポに存在する全てのブランチを表示
+(ローカルリポに情報を取ってきていない場合は表示されない)
+$ git branch -m <branchname1> <branchname2>
+$ git branch -d <branchname>
+-m : リネーム
+-d : 削除
+
+$ git merge <branchname>
+ローカルリポでマージ
+
+$ git diff <base> <compare>
+<base>ブランチをベースとした<compare>ブランチとの差分を表示
+大抵、<compare>が新しいブランチ想定
+
+
+#####マージコンフリクト#####
+- fast-forward
+  - そのままマージできる
+- no-fast-forward
+  - automatic merge(そのままマージできる)
+    - 各コミットが異なる箇所を変更している場合->自動マージ
+  - conflict
+    - 各コミットが同じ箇所を変更している場合->自分で対処する必要あり
+    - mainと開発ブランチのどちらを採用するかを決めねばならない
+
+
+
+
+
+
+
+
+
+
+
